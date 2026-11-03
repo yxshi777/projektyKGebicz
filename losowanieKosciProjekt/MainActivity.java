@@ -1,7 +1,10 @@
 package com.example.losowaniekosciprojekt;
 
+import static java.lang.Integer.parseInt;
+
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,9 +33,15 @@ public class MainActivity extends AppCompatActivity {
         przyciskRosnaco.setOnClickListener(v -> sortujRosnaco());
         Button przyciskMalejaco = findViewById(R.id.przyciskMalejaco);
         przyciskMalejaco.setOnClickListener(v -> sortujMalejaco());
+
+        EditText poleIloscKostek = findViewById(R.id.poleIloscKostek);
+        String iloscKostekStr = poleIloscKostek.toString();
+        int iloscKostek = parseInt(iloscKostekStr);
     }
     public void losuj(){
-
+        for(int i=0; i<iloscKostek; i++){
+            
+        }
     }
 
     public void sortujRosnaco(){
