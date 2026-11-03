@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Musisz miec wylosowane kostki", Toast.LENGTH_SHORT).show();
             return;
         }else{
-            wyniki.sort(b - a); //czy to bedzie dzialac?
+            wyniki.sort(a, b) -> b - a); //czy to bedzie dzialac?
             wyswietlWyniki();
         }
     }
