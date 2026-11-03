@@ -5,6 +5,8 @@ import static java.lang.Integer.parseInt;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,10 +15,11 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     ArrayList<Integer> wyniki = new ArrayList<Integer>();
-    
+    TextView wynikText = findViewById(R.id.wynikText);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +31,6 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        TextView wynikText = findViewById(R.id.wynikText);
-        
         Button przyciskLosuj = findViewById(R.id.przyciskLosuj);
         przyciskLosuj.setOnClickListener(v -> losuj());
         Button przyciskRosnaco = findViewById(R.id.przyciskRosnaco);
@@ -37,12 +38,12 @@ public class MainActivity extends AppCompatActivity {
         Button przyciskMalejaco = findViewById(R.id.przyciskMalejaco);
         przyciskMalejaco.setOnClickListener(v -> sortujMalejaco());
     }
-    
+
     public void losuj(){
         EditText poleIloscKostek = findViewById(R.id.poleIloscKostek);
         String iloscKostekStr = poleIloscKostek.getText().toString();
         int iloscKostekInt = parseInt(iloscKostekStr);
-        
+
         if(iloscKostekStr.isEmpty()){
             Toast.makeText(this, "Podaj ilość kostek: ", Toast.LENGTH_SHORT).show();
             return;
@@ -53,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         Random random = new Random();
-        
+
         for(int i = 0; i < iloscKostekInt; i++){
             wyniki.add(random.nextInt(6) + 1);
         }
@@ -82,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void wyswietlWyniki(){
         String tekstWynikow = "";
-        
+
         for(int i=0; i<wyniki.size(); i++){
             tekstWynikow += wyniki.get(i);
             if(i<wyniki.size()-1){
