@@ -19,8 +19,7 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     ArrayList<Integer> wyniki = new ArrayList<Integer>();
-    TextView wynikText = findViewById(R.id.wynikText);
-
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        TextView wynikText = findViewById(R.id.wynikText);
+
         Button przyciskLosuj = findViewById(R.id.przyciskLosuj);
         przyciskLosuj.setOnClickListener(v -> losuj());
         Button przyciskRosnaco = findViewById(R.id.przyciskRosnaco);
@@ -41,8 +43,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void losuj(){
         EditText poleIloscKostek = findViewById(R.id.poleIloscKostek);
-        String iloscKostekStr = poleIloscKostek.getText().toString();
         int iloscKostekInt = parseInt(iloscKostekStr);
+        String iloscKostekStr = poleIloscKostek.getText().toString();
 
         if(iloscKostekStr.isEmpty()){
             Toast.makeText(this, "Podaj ilość kostek: ", Toast.LENGTH_SHORT).show();
