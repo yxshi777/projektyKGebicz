@@ -33,14 +33,26 @@ public class MainActivity extends AppCompatActivity {
         przyciskRosnaco.setOnClickListener(v -> sortujRosnaco());
         Button przyciskMalejaco = findViewById(R.id.przyciskMalejaco);
         przyciskMalejaco.setOnClickListener(v -> sortujMalejaco());
-
+    }
+    
+    public void losuj(){
         EditText poleIloscKostek = findViewById(R.id.poleIloscKostek);
         String iloscKostekStr = poleIloscKostek.toString();
         int iloscKostek = parseInt(iloscKostekStr);
-    }
-    public void losuj(){
-        for(int i=0; i<iloscKostek; i++){
-            
+        
+        if(tekst.isEmpty()){
+            Toast.makeText(this, "Podaj ilość kostek: ", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if(iloscKostekInt<=0){
+            Toast.makeText(this, "Musisz mieć conajmniej jedną kostke!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        Random random = new Random();
+        
+        for(int i = 0; i < iloscKostekInt; i++){
+            wyniki.add(random.nextInt(6) + 1);
         }
     }
 
