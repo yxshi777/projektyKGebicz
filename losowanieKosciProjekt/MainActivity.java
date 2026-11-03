@@ -37,10 +37,10 @@ public class MainActivity extends AppCompatActivity {
     
     public void losuj(){
         EditText poleIloscKostek = findViewById(R.id.poleIloscKostek);
-        String iloscKostekStr = poleIloscKostek.toString();
+        String iloscKostekStr = poleIloscKostek.getText().toString();
         int iloscKostek = parseInt(iloscKostekStr);
         
-        if(tekst.isEmpty()){
+        if(iloscKostekStr.isEmpty()){
             Toast.makeText(this, "Podaj ilość kostek: ", Toast.LENGTH_SHORT).show();
             return;
         }
