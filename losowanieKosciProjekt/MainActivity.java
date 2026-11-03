@@ -16,6 +16,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     ArrayList<Integer> wyniki = new ArrayList<Integer>();
+    TextView wynikText = findViewById(R.id.wynikText);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     public void losuj(){
         EditText poleIloscKostek = findViewById(R.id.poleIloscKostek);
         String iloscKostekStr = poleIloscKostek.getText().toString();
-        int iloscKostek = parseInt(iloscKostekStr);
+        int iloscKostekInt = parseInt(iloscKostekStr);
         
         if(iloscKostekStr.isEmpty()){
             Toast.makeText(this, "Podaj ilość kostek: ", Toast.LENGTH_SHORT).show();
@@ -72,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Musisz miec wylosowane kostki", Toast.LENGTH_SHORT).show();
             return;
         }else{
-            wyniki.sort(a, b) -> b - a); //czy to bedzie dzialac?
+            wyniki.sort((a, b) -> b - a); //czy to bedzie dzialac?
             wyswietlWyniki();
         }
     }
