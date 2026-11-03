@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         for(int i = 0; i < iloscKostekInt; i++){
             wyniki.add(random.nextInt(6) + 1);
         }
-        wyswietlWyniki()
+        wyswietlWyniki();
     }
 
     public void sortujRosnaco(){
@@ -78,8 +78,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void wyswietlWyniki(){
-
+        String tekstWynikow = "";
+        
+        for(int i=0; i<wyniki.size(); i++){
+            tekstWynikow += wyniki.get(i);
+            if(i<wyniki.size()-1){
+                tekstWynikow += ", ";
+            }
+        }
+        wynikText.setText(tekstWynikow);
     }
-
-
 }
