@@ -57,7 +57,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void sortujRosnaco(){
-
+        if(wyniki.isEmpty()){
+            Toast.makeText(this, "Musisz miec wylosowane kostki", Toast.LENGTH_SHORT).show();
+            return;
+        }else{
+            wyniki.sort(null);
+        }
     }
 
     public void sortujMalejaco(){
