@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     ArrayList<Integer> wyniki = new ArrayList<Integer>();
-    TextView wynikText = findViewById(R.id.wynikText);
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        TextView wynikText = findViewById(R.id.wynikText);
+        
         Button przyciskLosuj = findViewById(R.id.przyciskLosuj);
         przyciskLosuj.setOnClickListener(v -> losuj());
         Button przyciskRosnaco = findViewById(R.id.przyciskRosnaco);
