@@ -66,7 +66,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void sortujMalejaco(){
-
+        if(wyniki.isEmpty()){
+            Toast.makeText(this, "Musisz miec wylosowane kostki", Toast.LENGTH_SHORT).show();
+            return;
+        }else{
+            wyniki.sort(); //ma być malejące
+        }
     }
 
 
