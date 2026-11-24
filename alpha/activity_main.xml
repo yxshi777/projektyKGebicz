@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <!-- 1 -->
+
+    <TextView
+        android:id="@+id/pudelko"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="#ffffff"
+        android:backgroundTint="#203e6e"
+        android:textSize="20sp"/>
+
+    <SeekBar
+        android:id="@+id/seekAlpha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:progress="100"/>
+
+    <TextView
+        android:id="@+id/procentyText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Przezroczystość panelu: 100%"
+        android:textColor="#000000"
+        android:textSize="20sp"/>
+
+<!-- 2 -->
+
+<!--    <TextView-->
+<!--        android:id="@+id/text1"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Przezroczystość panelu: 100%"-->
+<!--        android:textColor="#203e6e"-->
+<!--        android:textSize="20sp"/>-->
+
+<!--    <Button-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:text="+10%"-->
+<!--        android:id="@+id/dodaj10btn"/>-->
+
+<!--    <Button-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:text="-10%"-->
+<!--        android:id="@+id/odejmij10btn"/>-->
+
+</LinearLayout>
